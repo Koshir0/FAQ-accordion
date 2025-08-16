@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | FAQ accordion</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    body{
+      background-image: url( "/assets/images/background-pattern-desktop.svg");
+      background-repeat: no-repeat;
+      background-color: hsl(275, 100%, 97%);
+      /* width: 1440px; */
+    }
+    main{
+      background-color: hsl(0, 100%, 100%);
+      width: 384px;
+      margin: 219px auto;
+      padding: 24px;
+      border-radius: 12px;
+      font-family: "Work Sans", sans-serif;
+    }
+    p{
+      display: none;
+      color: hsl(292, 16%, 49%);
+    }
+    h4 {
+      display: flex;
+      justify-content: space-between;
+    }
+    h4:hover{
+      color: hsl(292, 16%, 49%);
+    }
+    @media screen and (max-width: 375px) {
+  main {
+    width: 327px; /* The width is 100%, when the viewport is 800px or smaller */
+  margin: 50px auto;
+  }
+  </style>
+</head>
+<body>
+
+  <main>
+   <h1> <img src="assets/images/icon-star.svg" alt="star"> FAQs</h1>
+
+  
+  <h4>What is Frontend Mentor, and how will it help me? <span><img src="assets/images/icon-plus.svg" alt="plus" class="toggleBtn"></span></h4>
+
+<p class="text">  Frontend Mentor offers realistic coding challenges to help developers improve their 
+  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
+  all levels and ideal for portfolio building. </p>
+  <hr>
+<h4>Is Frontend Mentor free? <span><img src="assets/images/icon-plus.svg" alt="plus" class="toggleBtn"></span></h4>  
+
+  <p class="text">Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
+  option providing access to a range of projects suitable for all skill levels.
+</p>
+<hr>
+  <h4>Can I use Frontend Mentor projects in my portfolio? <span><img src="assets/images/icon-plus.svg" alt="plus" class="toggleBtn"></span>
+</h4>
+  <p class="text">Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+  way to showcase your skills to potential employers!</p>
+<hr>
+<h4>  How can I get help if I'm stuck on a Frontend Mentor challenge?<span><img src="assets/images/icon-plus.svg" alt="plus" class="toggleBtn"></span>
+  </h4>
+  <p class="text">The best place to get help is inside Frontend Mentor's Discord community. There's a help 
+  channel where you can ask questions and seek support from other community members.
+</p>
+
+  </main>
+
+  <script>
+     const btns = document.querySelectorAll(".toggleBtn");
+  const texts = document.querySelectorAll(".text");
+
+  btns.forEach((btn, index) => {
+    const text = texts[index];
+    btn.addEventListener("click", () => {
+      if (text.style.display === "none" || text.style.display === "") {
+        text.style.display = "block";
+        btn.src = "assets/images/icon-minus.svg";
+      } else {
+        text.style.display = "none";
+        btn.src = "assets/images/icon-plus.svg";
+      }
+    });
+  });
+  </script>
+<!--   
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+</html>
